@@ -1,21 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage ('Build') {
-            steps {
-                  sh 'echo test'
-                  sh '''
-                  echo "multi-line"
-                   ls -lrt '''
-                   }
-                }
-        }
-}
-
-
-pipeline {
-    agent any
-    stages {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
